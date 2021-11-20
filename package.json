@@ -1,0 +1,27 @@
+{
+  "name": "movies-explorer-api",
+  "version": "1.0.0",
+  "description": "Дипломная работа",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RolandSallaz/movies-explorer-api.git"
+  },
+  "keywords": [],
+  "author": "Roland S.S.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RolandSallaz/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/RolandSallaz/movies-explorer-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
