@@ -2,7 +2,7 @@ const router = require('express').Router();
 const validator = require('validator');
 const { celebrate, Joi } = require('celebrate');
 const { getMovies, addMovie, deleteMovie } = require('../controllers/movies');
-const ValidationError = require('../../react-mesto-api-full/backend/errors/ValidationError');
+const ValidationError = require('../errors/ValidationError');
 
 const validateURL = (link) => {
   if (!validator.isURL(link, { require_protocol: true })) {

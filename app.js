@@ -7,7 +7,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const { signIn, signOut, createUser } = require('./controllers/users');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const NotFoundError = require('../react-mesto-api-full/backend/errors/NotFoundError');
+const NotFoundError = require('./errors/NotFoundError');
 const { limiter } = require('./middlewares/rateLimiter');
 
 const { PORT = 3000 } = process.env;

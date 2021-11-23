@@ -1,5 +1,5 @@
-const NoPermissionError = require('../../react-mesto-api-full/backend/errors/NoPermissionError');
-const NotFoundError = require('../../react-mesto-api-full/backend/errors/NotFoundError');
+const NoPermissionError = require('../errors/NoPermissionError');
+const NotFoundError = require('../errors/NotFoundError');
 const Movie = require('../models/movie');
 
 function getMovies(req, res, next) {

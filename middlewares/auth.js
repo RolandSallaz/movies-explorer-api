@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const AuthError = require('../../react-mesto-api-full/backend/errors/AuthError');
+const AuthError = require('../errors/AuthError');
 
 module.exports = (req, res, next) => {
   const token = req.cookies.jwt;

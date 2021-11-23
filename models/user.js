@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcrypt');
-const AuthError = require('../../react-mesto-api-full/backend/errors/AuthError');
-const ValidationError = require('../../react-mesto-api-full/backend/errors/ValidationError');
+const AuthError = require('../errors/AuthError');
+const ValidationError = require('../errors/ValidationError');
 
 const userSchema = new mongoose.Schema({
   email: {

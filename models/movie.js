@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-const ValidationError = require('../../react-mesto-api-full/backend/errors/ValidationError');
+const ValidationError = require('../errors/ValidationError');
 
 const movieSchema = new mongoose.Schema({
   country: {
