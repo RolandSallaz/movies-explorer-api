@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 const ValidationError = require('../errors/ValidationError');
+const { messageUrlErr } = require('../utils/errorMessages');
 
 const movieSchema = new mongoose.Schema({
   country: {
@@ -30,7 +31,7 @@ const movieSchema = new mongoose.Schema({
       validator(url) {
         return validator.isURL(url);
       },
-      message: () => new ValidationError('Неверно указана ссылка'),
+      message: () => new ValidationError(messageUrlErr),
     },
   },
   trailer: {
@@ -40,7 +41,7 @@ const movieSchema = new mongoose.Schema({
       validator(url) {
         return validator.isURL(url);
       },
-      message: () => new ValidationError('Неверно указана ссылка'),
+      message: () => new ValidationError(messageUrlErr),
     },
   },
   thumbnail: {
@@ -50,7 +51,7 @@ const movieSchema = new mongoose.Schema({
       validator(url) {
         return validator.isURL(url);
       },
-      message: () => new ValidationError('Неверно указана ссылка'),
+      message: () => new ValidationError(messageUrlErr),
     },
   },
   owner: {

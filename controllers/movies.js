@@ -1,6 +1,8 @@
 const NoPermissionError = require('../errors/NoPermissionError');
 const NotFoundError = require('../errors/NotFoundError');
 const Movie = require('../models/movie');
+const { messageNotFoundErr, messageNoPermissionErr } = require('../utils/errorMessages');
+const { mesageSucces } = require('../utils/responeMessages');
 
 function getMovies(req, res, next) {
   return Movie.find({})
@@ -39,17 +41,16 @@ function deleteMovie(req, res, next) {
   return Movie.findById(id)
     .then((movie) => {
       if (!movie) {
-        throw new NotFoundError('Фильм не найден');
+        throw new NotFoundError(messageNotFoundErr);
       }
       if (movie.owner.toString() !== userId) {
-        throw new NoPermissionError('Недостаточно прав');
+        throw new NoPermissionError(messageNoPermissionErr);
       }
-      return Movie.findByIdAndDelete(id)
+      return movie.remove()
         .then(() => {
           res
-            .send({ message: 'Успешно' });
-        })
-        .catch(next);
+            .send({ message: mesageSucces });
+        });
     })
     .catch(next);
 }
