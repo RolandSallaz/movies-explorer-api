@@ -58,6 +58,8 @@ function signIn(req, res, next) {
         .cookie('jwt', token, {
           maxAge: 60 * 60 * 24 * 7 * 1000,
           httpOnly: true,
+          sameSite: 'none',
+          secure: true,
         })
         .send({ message: messageLoginSucces });
     })
