@@ -24,7 +24,7 @@ app.use(limiter);
 app.use(helmet());
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:3001'],
+  origin: ['https://api.diploma.roland.nomore.nomoredomains.work'],
 }));
 app.use(router);
 app.use(errorLogger);

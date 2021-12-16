@@ -67,7 +67,8 @@ function signIn(req, res, next) {
 }
 
 function signOut(req, res) {
-  return res.clearCookie('jwt')
+  return res
+    .clearCookie('jwt')
     .status(200)
     .send({ message: messageLogOutSucces });
 }
