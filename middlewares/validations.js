@@ -32,7 +32,7 @@ const validateMoviePost = celebrate({
     image: Joi.string().custom(validateURL).required(),
     trailer: Joi.string().custom(validateURL).required(),
     thumbnail: Joi.string().custom(validateURL).required(),
-    nameRU: Joi.string().regex(/^[а-яА-Я1-9]+/).required(),
+    nameRU: Joi.string().required(),
     nameEN: Joi.string().regex(/^\w+/).required(),
     movieId: Joi.number().required(),
   }),
