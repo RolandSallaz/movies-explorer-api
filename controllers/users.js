@@ -10,7 +10,7 @@ const { JWT_SECRET } = require('../utils/config');
 function getCurrentUser(req, res, next) {
   return User.findById(req.user)
     .then((user) => {
-      res.send({ email: user.email, name: user.name });
+      res.send({ email: user.email, name: user.name, id: user._id });
     })
     .catch(next);
 }
